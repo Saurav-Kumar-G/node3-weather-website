@@ -5,6 +5,8 @@ const hbs=require('hbs')
 const geocode=require('./utils/geocode')
 const forecast=require('./utils/forecast')
 const app=express()
+
+const port=process.env.PORT || 3000
 const publicDirectoryPath=path.join(__dirname,'../public')
 const viewspath=path.join(__dirname,'../templates/views')
 const partialpath=path.join(__dirname,'../templates/partials')
@@ -83,6 +85,6 @@ app.get('*',(req,res)=>{
         errormessage:'bahut hard bahut hard'
     })
 })
-    app.listen(3000,()=>{
-        console.log('server on port 3k')
+    app.listen(port,()=>{
+        console.log('server on port'+port)
     })
